@@ -19,8 +19,8 @@ jobs:
     DATABASE_URL: postgresql://postgres:postgres@localhost:5432/explorers_api?schema=public
     PORT: 3030
   steps:
-    - uses: actions/checkout@v2
-    - name: Install modules
-      run: npm i
-    - name: Run tests
-      run: npm run test
+  - uses: actions/checkout@v2
+  - name: Install modules
+    run: npm i
+  - name: Run tests
+    run: npm run test
