@@ -1,6 +1,6 @@
 import express, { json } from "express";
 import Config from "./config/config.js";
-import Explorers from "../app/routes/explorer_routes.js";
+import Explorers from "../app/router/explorer_router.js";
 const app = express();
 
 app.use(json());

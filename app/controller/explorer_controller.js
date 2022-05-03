@@ -14,6 +14,18 @@ class ExplorerController {
         const newExplorer = new Explorer(req.body);
         return await ExplorerService.creatExplorer(newExplorer);
     }
+    static async updateExplorer(req) {
+        const id = parseInt(req.params.id);
+        const updatedExplorer = new Explorer(req.body);
+
+        return await ExplorerService.updateExplorer(id, updatedExplorer);
+    }
+
+    static async deleteExplorer(req) {
+        const id = parseInt(req.params.id);
+
+        return ExplorerService.deleteExplorer(id);
+    }
 }
 
 export default ExplorerController;

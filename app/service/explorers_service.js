@@ -11,6 +11,25 @@ class ExplorerService {
 
         return { user: newExplorer, message: "user created" };
     }
+
+    static async updateExplorer(id, payload) {
+        const updateExplorer = await prisma.explorer.update({
+            where: {
+                id: id,
+            },
+            data: payload,
+        });
+
+        return updateExplorer;
+    }
+
+    static async deleteExplorer(id) {
+        const removedExplorer = await prisma.explorer.delete({
+            where: { id: id },
+        });
+
+        return removedExplorer;
+    }
 }
 
 export default ExplorerService;
