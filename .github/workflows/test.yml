@@ -31,7 +31,7 @@ jobs:
         with:
           node-version: '18.x'
       - run: npm install
+      - run: npx prisma migrate dev --name init
       - run: npm run seed
       # Create the database
-      - run: npx prisma migrate deploy
       - run: npm run test
