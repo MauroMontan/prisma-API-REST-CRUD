@@ -17,10 +17,10 @@ jobs:
     PORT: 3030
 
   steps:
-    - uses: actions/checkout@v2
-    - name: Install modules
-      run: npm i
-    - name: prisma migrate
-      run: npx prisma migrate deploy
-    - name: Run tests
-      run: npm run test
+  - uses: actions/checkout@v2
+  - name: Install modules
+    run: npm i
+  - name: prisma migrate
+    run: npx prisma migrate deploy
+  - name: Run tests
+    run: npm run test
