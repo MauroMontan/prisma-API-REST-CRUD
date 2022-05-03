@@ -23,7 +23,7 @@ jobs:
           # Maps tcp port 5432 on service container to the host
           - 5432:5432
     env:
-      DATABASE_URL: postgresql://postgres:postgres@localhost:5432/fastify-graphql
+      DATABASE_URL: postgresql://postgres:postgres@localhost:5432/explorers_api?schema=public
       PORT: 3030
     steps:
       - uses: actions/checkout@v2
