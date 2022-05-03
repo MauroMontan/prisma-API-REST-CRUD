@@ -1,0 +1,22 @@
+{
+    "name": "prisma_test",
+    "version": "1.0.0",
+    "description": "",
+    "type": "module",
+    "main": "./app/main.js",
+    "scripts": {
+        "test": "jest",
+        "serve": "node ./app/main.js"
+    },
+    "author": "MauroMontan",
+    "license": "ISC",
+    "dependencies": {
+        "@prisma/client": "^3.13.0",
+        "dotenv": "^16.0.0",
+        "express": "^4.18.1",
+        "jest": "^28.0.3"
+    },
+    "devDependencies": {
+        "prisma": "^3.13.0"
+    }
+}
