@@ -1,11 +1,14 @@
+
+
 name: CI
 on: push
 jobs:
-  test:
+  build:
     runs-on: ubuntu-latest
-    services: 
-      postgres: postgres
 
+    services: 
+    postgres:
+      image: postgres
       env:
         POSTGRES_USER: postgres
         POSTGRES_PASSWORD: postgres
@@ -15,12 +18,9 @@ jobs:
   env:
     DATABASE_URL: postgresql://postgres:postgres@localhost:5432/explorers_api?schema=public
     PORT: 3030
-
   steps:
-  - uses: actions/checkout@v2
-  - name: Install modules
-    run: npm i
-  - name: prisma migrate
-    run: npx prisma migrate deploy
-  - name: Run tests
-    run: npm run test
+    - uses: actions/checkout@v2
+    - name: Install modules
+      run: npm i
+    - name: Run tests
+      run: npm run test
