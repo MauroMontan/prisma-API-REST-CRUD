@@ -24,12 +24,14 @@ jobs:
           - 5432:5432
     env:
       DATABASE_URL: postgresql://postgres:postgres@localhost:5432/fastify-graphql
+      PORT: 3030
     steps:
       - uses: actions/checkout@v2
       - uses: actions/setup-node@v1
         with:
           node-version: '18.x'
-      - run: npm run build
+      - run: npm install
+      - run: npm run seed
       # Create the database
       - run: npx prisma migrate deploy
       - run: npm run test
