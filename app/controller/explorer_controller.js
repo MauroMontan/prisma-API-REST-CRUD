@@ -1,5 +1,5 @@
 import ExplorerService from "../service/explorers_service.js";
-import Explorer from "../models/explorer_model.js";
+import { Explorer } from "../models/index.js";
 
 class ExplorerController {
     static getAllExplorers = async () =>

@@ -21,12 +21,12 @@ model Explorer {
 }
 
 model Commander {
-    id               Int     @id @default(autoincrement())
-    name             String  @unique
-    lang             String  @db.VarChar(255)
-    missionCommander String  @db.VarChar(255)
+    id               Int      @id @default(autoincrement())
+    name             String   @unique
+    lang             String   @db.VarChar(255)
+    missionCommander String   @db.VarChar(255)
     enrollments      Int
-    hasCertification Boolean @default(false)
-    dateCreated DateTime @default(now())
-    lastUpdated DateTime @updatedAt
+    hasCertification Boolean  @default(false)
+    dateCreated      DateTime @default(now())
+    lastUpdated      DateTime @updatedAt
 }
