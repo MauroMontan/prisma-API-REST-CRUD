@@ -5,7 +5,7 @@ class CommanderController {
         await CommanderService.getAllCommanders();
 
     static async getById(req) {
-        const id = req.params.id;
+        const id = parseInt(req.params.id);
         return await CommanderService.getById(id);
     }
 
