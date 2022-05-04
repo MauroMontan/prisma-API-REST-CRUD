@@ -1,4 +1,4 @@
-import ExplorerService from "../service/explorers_service.js";
+import { ExplorerService } from "../service/index.js";
 import { Explorer } from "../models/index.js";
 
 class ExplorerController {
