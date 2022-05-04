@@ -1,5 +1,5 @@
 import { Router } from "express";
-import ExplorerController from "../controller/explorer_controller.js";
+import { ExplorerController } from "../controller/index.js";
 const router = Router();
 
 router.get("/", async (_, res) => {

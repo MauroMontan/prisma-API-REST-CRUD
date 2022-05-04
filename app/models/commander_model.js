@@ -8,3 +8,5 @@ class Commander {
         this.hasCertification = req.hasCertification;
     }
 }
+
+export default Commander;
