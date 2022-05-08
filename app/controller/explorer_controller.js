@@ -10,9 +10,15 @@ class ExplorerController {
         return await ExplorerService.getById(id);
     }
 
-    static async createExplorer(req) {
-        const newExplorer = new Explorer(req.body);
-        return await ExplorerService.creatExplorer(newExplorer);
+    static async createExplorer(req, next) {
+        try {
+            const newExplorer = new Explorer(req.body);
+            return await ExplorerService.creatExplorer(newExplorer);
+        } catch (error) {
+            if (error.code === "P2002") {
+                next(new Error("explorer already exists"));
+            }
+        }
     }
     static async updateExplorer(req) {
         const id = parseInt(req.params.id);

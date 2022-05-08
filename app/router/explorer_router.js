@@ -12,8 +12,8 @@ router.get("/:id", async (req, res) => {
     res.json(explorer);
 });
 
-router.post("/", async (req, res) => {
-    res.json(await ExplorerController.createExplorer(req));
+router.post("/", async (req, res, next) => {
+    res.json(await ExplorerController.createExplorer(req,next));
 });
 
 router.put("/:id", async (req, res) => {

@@ -11,8 +11,8 @@ router.get("/:id", async (req, res) => {
     res.json(await CommanderController.getById(req));
 });
 
-router.post("/", async (req, res) => {
-    const newCommander = await CommanderController.createCommander(req);
+router.post("/", async (req, res,next) => {
+    const newCommander = await CommanderController.createCommander(req,next);
     res.json(newCommander);
 });
 

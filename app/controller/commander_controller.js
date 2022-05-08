@@ -9,9 +9,15 @@ class CommanderController {
         return await CommanderService.getById(id);
     }
 
-    static async createCommander(req) {
-        const newCommander = new Commander(req.body);
-        return await CommanderService.createCommander(newCommander);
+    static async createCommander(req,next) {
+        try {
+            const newCommander = new Commander(req.body);
+            return await CommanderService.createCommander(newCommander);
+        } catch (error) {
+            if (error.code === "P2002") {
+                next(new Error("explorer already exist"));
+            }
+        }
     }
     static async updateCommander(req) {
         const id = parseInt(req.params.id);
